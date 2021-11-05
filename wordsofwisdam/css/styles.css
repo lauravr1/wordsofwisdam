@@ -1,0 +1,145 @@
+/* importeer fonts uit onze eigen mappen */
+
+@font-face {
+    font-family: 'FilsonPro';
+    src: url('../assets/FilsonProRegular.otf');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'AcuminVariable';
+    src: url('../assets/AcuminVariableConcept.otf');
+    font-style: normal;
+    font-weight: 300;
+}
+
+
+/* CSS reset, deze zet standaard alle witruimte (margin en padding) op 0. Je moet dan zelf overal weer margin en padding toevoegen op de elementen waar je dit wel wilt hebben.
+   Ook zorgen we dat voor alle block elementen de afmetingen niet alleen worden bepaald door de content, maar dat ook padding en border meetellen. 
+   Dit ontwerpt makkelijker.
+   Zie: https://www.internetingishard.com/html-and-css/css-box-model/#content-boxes-and-border-boxes  */
+
+*,
+html {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+/* Stel een witte achtergrond in en geef de body een beetje margin, relatief ten opzichte van het schermformaat */
+
+body {
+    background-color: #FFFFFF;
+    width: 100vw;
+}
+
+
+/* onderstaande styles voor de <h1>, <h2>, <p> an <a> tags geven een voorbeeld
+   hoe je de geimporteerde fonts kunt gebruiken.
+   Op je eigen website mag je natuurlijk andere lettertypes, groottes, en
+   kleuren, etc. voor deze tags gebruiken. */
+
+h1 {
+    font-family: 'FilsonPro', sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #5475B6;
+    font-weight: 700;
+    /* bold */
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-family: 'FilsonPro', sans-serif;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    background-color: #EB4F75;
+    font-weight: 700;
+    /* bold */
+    width: fit-content;
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-family: 'AcuminVariable', sans-serif;
+    font-size: 1em;
+    color: #6D6F71;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: #EB4F75;
+}
+
+
+/* We gebruiken in HTML een <blockquote> tag om een citaat weer te geven en stylen dit als tegeltje. De truc hierbij is om een border-image op te geven. 
+   Dit plaatje bestaat uit 9 vlakjes, voor elke kant van het tegeltje: links, rechts, boven, onder, midden en de vier hoeken. 
+   Voor meer info, zie bijvoorbeeld:
+   https://www.w3schools.com/css/css3_border_images.asp
+   https://developer.mozilla.org/en-US/docs/Web/CSS/border-image    */
+
+.aha {
+    font-family: 'FilsonPro', sans-serif;
+    font-size: 1.4em;
+    color: #0C1E32;
+    font-weight: 500;
+    /* ietsje dikker dan normaal, maar minder dik dan bold */
+    text-align: center;
+    width: 335px;
+    height: 335px;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 1.8em auto 1.8em auto;
+    border: 1px solid transparent;
+    /* Eerst een standaard border aanzetten. Deze zie je als het plaatje niet mocht werken (of niet, want transparant) */
+    border-image-source: url(../images/hoekjes.png);
+    /* de border-image bestaat uit 9 vlakjes */
+    border-image-width: 100px;
+    /* we willen de border 100px groot */
+    border-image-slice: 100;
+    /* het plaatje wordt in 9 stukken geknipt: het totale plaatje is 300x300 en elk gedeelte (vlakje) van de border is 100x100 */
+}
+
+.options {
+    text-align: justify;
+}
+
+footer {
+    padding: 100%;
+    color: #EB4F75;
+}
+
+.yesbutton {
+    background-color: #5475B6;
+    color: white;
+    font-size: xx-large;
+    border-radius: 12.5%;
+    padding: 1rem;
+}
+
+.nobutton {
+    background-color: #EB4F75;
+    color: white;
+    font-size: xx-large;
+    border-radius: 12.5%;
+    padding: 1rem;
+}
+
+.generalbutton {
+    display: flex;
+    align-items: flex-end;
+}
+
+.image {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.imageWrapper {
+    width: 100%;
+}

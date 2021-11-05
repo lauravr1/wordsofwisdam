@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript">
+        function loadImage() {
+            var urlArray = ['<img class="image" src="images/image1.jpg">', '<img class="image" src="images/image2.jpg">', '<img class="image" src="images/image3.jpg">', '<img class="image" src="images/image4.png">', '<img class="image" src="images/image5.jpg">'];
+
+            document.getElementById("imageWrapper").innerHTML = urlArray[Math.floor(Math.random() * urlArray.length)];
+        }
+    </script>
+</head>
+
+<body onload="loadImage()">
+    <main>
+        <h1>Pictinder</h1>
+
+        <h2>Tiles of Wis'dam</h2>
+        <p>Tiles of Wisdom are traditional Dutch tiles with proverbs or aphorisms inscribed on them, often in Delftware style, often used as decorative wall-hangings. They can typically be found in the toilet room and hold useful – and sometimes humorous
+            – wisdom for the toilet goer to learn from. Hence the name ‘tegeltjeswijsheid’, or ‘tile wisdom’. The first known tiles of wisdom date back to the mid-16th century.</p>
+
+
+        <div class="aha" id="imageWrapper">
+            <img src="images/hoekjes.png">
+        </div>
+
+        <button class="yesbutton generalbutton">
+			Yes
+		</button>
+
+        <button class="nobutton generalbutton" onclick="loadImage()">
+			No
+		</button>
+
+    </main>
+
+    <footer>
+        <p>Contact</p>
+        <p>Send in</p>
+        <p>Sources</p>
+        <p>For more wisdom, visit <a href="https://wordsofwisdam.com/">wordsofwisdam.com</a>.</p>
+    </footer>
+</body>
+
+</html>
